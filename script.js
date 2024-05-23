@@ -10,8 +10,8 @@ let peliculas = [];
 const generos = ['Terror', 'Comedia', 'Accion', 'Romantica'];
 
 const expreReg = {
-    titulo: /^[a-zA-Z0-9\s.,':!?-]+$/,
-    director:/^[a-zA-Z\s.-]+$/,
+    titulo: /^[a-zA-Z0-9\s.,':!?-ñÑ]+$/,
+    director:/^[a-zA-Z\s.-ñÑ]+$/,
     year: /^(18[0-9]{2}|19[0-9]{2}|20[0-9]{2}|2100)$/
 }
 
