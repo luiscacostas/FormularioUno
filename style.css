@@ -1,24 +1,45 @@
+body{
+    background-color: rgb(208, 234, 225);
+}
 .contenedor{
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
 }
-.formulario{
-    display: inline ;
-    flex-direction: column;
+
+h2, label{
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
+
+.formulario{
+    display: flex ;
+    flex-direction: column;
+    gap: 10px;
+}
+
 input{
     height: 25px;
     border: 1px solid gray;
     margin-bottom: 10px;
     width: 100%;
 }
+label{
+    font-size: 18px;
+    font-weight: bold;
+}
+#genero{
+    width: 100%;
+    text-align: center;
+}
 .btn{
     background-color: rgb(51, 90, 200);
     color: white;
     height: 30px;
-    display: block;
-    width: auto;
+    display: inline-block;
+    width: 100%;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 table {
@@ -38,9 +59,21 @@ th {
     background-color: rgb(51, 90, 200);
     color: white;
     height: 30px;
-    width: auto;
-    margin-top: 20px;
-}
-.vacio{
+    width: 100%;
+    margin: 20px 0;
+    float: right;
     text-align: center;
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    .formulario{
+        justify-content: space-between;
+    }
+    h2, label{
+        text-align: left;
+    }
+    .btn, #filtro, #genero{
+        width: min-content;
+    }
+    
 }

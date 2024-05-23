@@ -17,7 +17,7 @@ const expreReg = {
 
 let objetosValidar = {
     titulo: false,
-    director : false,
+    director: false,
     year: false,
     genero: false
 }
@@ -77,6 +77,7 @@ const validarFormulario = ()=>{
         peliculas.push(nuevaPelicula);
         agregarFilaTabla(nuevaPelicula);
         formulario.reset();
+        selectFiltro.removeAttribute('disabled');
     }else{
         alert('No se ha podido enviar el formulario')
     }
@@ -91,7 +92,7 @@ const filtrarPeliculas = (genero) => {
     }
 
     if(peliculasFiltradas.length === 0){
-        tabla.innerHTML = '<p>No hay archivos que mostrar</p>'
+        agregarFilaError();
     }
     peliculasFiltradas.forEach(pelicula =>{
         agregarFilaTabla(pelicula)
@@ -112,6 +113,13 @@ const agregarFilaTabla = (pelicula) => {
     tabla.append(fila);
 };
 
+const agregarFilaError = ()=>{
+    const casillaVacia = document.createElement('td');
+    casillaVacia.textContent = 'No hay peliculas que mostrar';
+    casillaVacia.classList.add('error');
+    casillaVacia.colSpan = 4;
+    tabla.append(casillaVacia);
+}
 
 const crearOpciones = (...generos)=>{
         generos.forEach(opc => {
